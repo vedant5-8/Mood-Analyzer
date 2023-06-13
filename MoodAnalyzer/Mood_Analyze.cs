@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzer
 {
-    internal class Mood_Analyze
+    public class Mood_Analyze
     {
         public string HappyMood = "Happy";
         public string SadMood = "Sad";
