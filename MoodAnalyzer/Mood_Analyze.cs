@@ -12,6 +12,11 @@ namespace MoodAnalyzer
         public string HappyMood = "Happy";
         public string SadMood = "Sad";
 
+        public Mood_Analyze()
+        {
+            Message = null;
+        }
+
         public Mood_Analyze(string message)
         {
             this.Message = message;
@@ -19,11 +24,18 @@ namespace MoodAnalyzer
 
         public string AnalyzeMood()
         {
-            if (Message.Contains("sad"))
+            try
             {
-                return SadMood;
+                if (Message.Contains("sad"))
+                {
+                    return SadMood;
+                }
+                else
+                {
+                    return HappyMood;
+                }
             }
-            else
+            catch
             {
                 return HappyMood;
             }

@@ -18,7 +18,6 @@ namespace MoodAnalyzer
             Console.WriteLine(mood.AnalyzeMood("I am in happy mood."));
             */
 
-            // Refactor - Refactor the code to take the mood message in Constructor
             Mood_Analyze mood1 = new Mood_Analyze("I am in sad mood.");
 
             Console.WriteLine(mood1.AnalyzeMood());
@@ -26,6 +25,10 @@ namespace MoodAnalyzer
             Mood_Analyze mood2 = new Mood_Analyze("I am in any mood.");
 
             Console.WriteLine(mood2.AnalyzeMood());
+
+            Mood_Analyze mood3 = new Mood_Analyze();
+
+            Console.WriteLine(mood3.AnalyzeMood());
         }
     }
 }
