@@ -33,5 +33,16 @@ namespace Mood_Analyzer_Test
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
 
+        [TestMethod]
+        public void TestCase3()
+        {
+            Mood_Analyze mood = new Mood_Analyze();
+
+            string ExpectedResult = mood.AnalyzeMood();
+            string ActualResult = "Happy";
+
+            Assert.AreEqual(ExpectedResult, ActualResult);
+        }
+
     }
 }
