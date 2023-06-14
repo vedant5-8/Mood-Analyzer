@@ -5,7 +5,7 @@ namespace Mood_Analyzer_Test
     [TestClass]
     public class UnitTest1
     {
-        /*
+        
         [TestMethod]
         public void TestCase1()
         {
@@ -18,7 +18,7 @@ namespace Mood_Analyzer_Test
 
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
-        */
+        
 
         [TestMethod]
         public void TestCase2()
