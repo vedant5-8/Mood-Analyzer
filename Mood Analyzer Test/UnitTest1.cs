@@ -18,7 +18,6 @@ namespace Mood_Analyzer_Test
 
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
-        
 
         [TestMethod]
         public void TestCase2()
@@ -33,6 +32,7 @@ namespace Mood_Analyzer_Test
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
 
+        /*
         [TestMethod]
         public void TestCase3()
         {
@@ -55,6 +55,30 @@ namespace Mood_Analyzer_Test
 
             Assert.AreEqual(actual, expected);
         }
+        */
 
+        // Given NULL Mood Should Throw MoodAnalysisException
+
+        [TestMethod]
+        public void TestCase4()
+        {
+            MoodAnalysisException ex = new MoodAnalysisException();
+            string actual;
+
+            try
+            {
+                Mood_Analyze mood = new Mood_Analyze();
+
+                actual = mood.AnalyzeMood();
+            }
+            catch
+            {
+                actual = ex.Message;
+            }
+
+            string expected = ex.Message;
+
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
