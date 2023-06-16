@@ -36,12 +36,24 @@ namespace Mood_Analyzer_Test
         [TestMethod]
         public void TestCase3()
         {
-            Mood_Analyze mood = new Mood_Analyze();
+            NullReferenceException ex = new NullReferenceException();
+            string actual;
 
-            string ExpectedResult = mood.AnalyzeMood();
-            string ActualResult = "Happy";
+            try
+            {
+                Mood_Analyze mood = new Mood_Analyze();
 
-            Assert.AreEqual(ExpectedResult, ActualResult);
+                actual = mood.AnalyzeMood();
+
+            }
+            catch
+            {
+                actual = ex.Message;
+            }
+
+            string expected = ex.Message;
+
+            Assert.AreEqual(actual, expected);
         }
 
     }
