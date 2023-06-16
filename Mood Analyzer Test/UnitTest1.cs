@@ -67,7 +67,7 @@ namespace Mood_Analyzer_Test
 
             try
             {
-                Mood_Analyze mood = new Mood_Analyze();
+                Mood_Analyze mood = new Mood_Analyze("");
 
                 actual = mood.AnalyzeMood();
             }
