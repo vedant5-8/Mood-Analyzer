@@ -6,7 +6,7 @@ namespace Mood_Analyzer_Test
     [TestClass]
     public class UnitTest1
     {
-        // TC1.1 - Given “I am in sad mood” message Should Return SAD
+        // TC2.1 - Given “I am in sad mood” message Should Return SAD
         
         [TestMethod]
         public void TestCase1()
@@ -23,7 +23,7 @@ namespace Mood_Analyzer_Test
             
         }
 
-        // TC1.2 - Given “I am in any mood” message Should Return Happy
+        // TC2.2 - Given “I am in any mood” message Should Return Happy
 
         [TestMethod]
         public void TestCase2()
