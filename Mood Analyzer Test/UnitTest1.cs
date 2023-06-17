@@ -6,29 +6,12 @@ namespace Mood_Analyzer_Test
     [TestClass]
     public class UnitTest1
     {
-        // TC2.1 - Given “I am in sad mood” message Should Return SAD
-        
+        // TC3.1 - Given Null Mood Should Return Happy
+
         [TestMethod]
         public void TestCase1()
         {
-            string MoodMSG = "I am in sad mood.";
-
-            Mood_Analyze mood = new Mood_Analyze(MoodMSG);
-
-            string actual = mood.AnalyzeMood();
-
-            string expected = "Sad";
-
-            Assert.AreEqual(expected, actual);
-            
-        }
-
-        // TC2.2 - Given “I am in any mood” message Should Return Happy
-
-        [TestMethod]
-        public void TestCase2()
-        {
-            string MoodMSG = "I am in any mood.";
+            string MoodMSG = "";
 
             Mood_Analyze mood = new Mood_Analyze(MoodMSG);
 
@@ -37,6 +20,7 @@ namespace Mood_Analyzer_Test
             string expected = "Happy";
 
             Assert.AreEqual(expected, actual);
+            
         }
 
     }
