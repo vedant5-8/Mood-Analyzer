@@ -8,16 +8,9 @@ namespace MoodAnalyzer
         {
             Console.WriteLine("Welcome to Mood Analyzer");
 
-            try
-            {
-                Mood_Analyze mood1 = new Mood_Analyze();
+            Console.WriteLine("Test Case1- I am in Sad Mood");
 
-                Console.WriteLine(mood1.AnalyzeMood());
-
-            } catch (MoodAnalysisException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine("Test Case2- I am in Happy Mood");
         }
     }
 }

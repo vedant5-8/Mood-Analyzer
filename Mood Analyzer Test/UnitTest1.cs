@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using MoodAnalyzer;
 
 namespace Mood_Analyzer_Test
@@ -5,80 +6,38 @@ namespace Mood_Analyzer_Test
     [TestClass]
     public class UnitTest1
     {
+        // TC1.1 - Given “I am in sad mood” message Should Return SAD
         
         [TestMethod]
         public void TestCase1()
         {
-            string message = "I am in sad mood.";
+            string MoodMSG = "I am in sad mood.";
 
-            Mood_Analyze mood = new Mood_Analyze(message);
+            Mood_Analyze mood = new Mood_Analyze();
 
-            string ExpectedResult = mood.AnalyzeMood();
-            string ActualResult = "Sad";
+            string actual = mood.AnalyzeMood(MoodMSG);
 
-            Assert.AreEqual(ExpectedResult, ActualResult);
+            string expected = "Sad";
+
+            Assert.AreEqual(expected, actual);
+            
         }
+
+        // TC1.2 - Given “I am in any mood” message Should Return Happy
 
         [TestMethod]
         public void TestCase2()
         {
-            string message = "I am in happy mood.";
+            string MoodMSG = "I am in any mood.";
 
-            Mood_Analyze mood = new Mood_Analyze(message);
+            Mood_Analyze mood = new Mood_Analyze();
 
-            string ExpectedResult = mood.AnalyzeMood();
-            string ActualResult = "Happy";
+            string actual = mood.AnalyzeMood(MoodMSG);
 
-            Assert.AreEqual(ExpectedResult, ActualResult);
+            string expected = "Happy";
+
+            Assert.AreEqual(expected, actual);
         }
 
-        /*
-        [TestMethod]
-        public void TestCase3()
-        {
-            NullReferenceException ex = new NullReferenceException();
-            string actual;
-
-            try
-            {
-                Mood_Analyze mood = new Mood_Analyze();
-
-                actual = mood.AnalyzeMood();
-
-            }
-            catch
-            {
-                actual = ex.Message;
-            }
-
-            string expected = ex.Message;
-
-            Assert.AreEqual(actual, expected);
-        }
-        */
-
-        // Given NULL Mood Should Throw MoodAnalysisException
-
-        [TestMethod]
-        public void TestCase4()
-        {
-            MoodAnalysisException ex = new MoodAnalysisException();
-            string actual;
-
-            try
-            {
-                Mood_Analyze mood = new Mood_Analyze("");
-
-                actual = mood.AnalyzeMood();
-            }
-            catch
-            {
-                actual = ex.Message;
-            }
-
-            string expected = ex.Message;
-
-            Assert.AreEqual(actual, expected);
-        }
     }
 }
