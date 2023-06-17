@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using MoodAnalyzer;
+using Newtonsoft.Json.Linq;
 using System.Security.Claims;
 
 namespace Mood_Analyzer_Test
@@ -32,11 +33,27 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze(null);
-                object actual = MoodAnalyserFactory.CreateMoodAnalyserDefaultConstructor("Mood_Analyser.Mood_Analyse", "Mood_Analyse"); ;
+                object actual = MoodAnalyserFactory.CreateMoodAnalyserDefaultConstructor("Mood_Analyser.Mood_Analyse", "Mood_Analyze"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {
                 Assert.AreEqual("Class not found", ex.Message);
+            }
+        }
+
+        // UC4.3 - Given Class When Constructor Not Proper Should Throw MoodAnalysisException
+
+        [TestMethod]
+        public void TestCase3()
+        {
+            try
+            {
+                object expected = new Mood_Analyze(null);
+                object actual = MoodAnalyserFactory.CreateMoodAnalyserDefaultConstructor("Mood_Analyser.Mood_Analyze", "Mood_Analyse"); ;
+            }
+            catch (CustomMoodAnalysisException ex)
+            {
+                Assert.AreEqual("Constructor is not found", ex.Message);
             }
         }
     }
