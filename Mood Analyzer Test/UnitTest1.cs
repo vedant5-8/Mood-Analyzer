@@ -13,9 +13,9 @@ namespace Mood_Analyzer_Test
         {
             string MoodMSG = "I am in sad mood.";
 
-            Mood_Analyze mood = new Mood_Analyze();
+            Mood_Analyze mood = new Mood_Analyze(MoodMSG);
 
-            string actual = mood.AnalyzeMood(MoodMSG);
+            string actual = mood.AnalyzeMood();
 
             string expected = "Sad";
 
@@ -30,9 +30,9 @@ namespace Mood_Analyzer_Test
         {
             string MoodMSG = "I am in any mood.";
 
-            Mood_Analyze mood = new Mood_Analyze();
+            Mood_Analyze mood = new Mood_Analyze(MoodMSG);
 
-            string actual = mood.AnalyzeMood(MoodMSG);
+            string actual = mood.AnalyzeMood();
 
             string expected = "Happy";
 

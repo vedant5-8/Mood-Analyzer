@@ -7,9 +7,16 @@ namespace MoodAnalyzer
         public string HappyMood = "Happy";
         public string SadMood = "Sad";
 
-        public string AnalyzeMood(string Mood)
+        public string Message;
+
+        public Mood_Analyze(string message)
         {
-            if (Mood.Contains("sad"))
+            Message = message;
+        }
+
+        public string AnalyzeMood()
+        {
+            if (this.Message.Contains("sad"))
             {
                 return SadMood;
             } 
