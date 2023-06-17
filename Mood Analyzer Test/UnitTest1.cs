@@ -51,5 +51,21 @@ namespace Mood_Analyzer_Test
                 Assert.AreEqual(expected, e.Message);
             }
         }
+
+        [TestMethod]
+        public void TestCase3()
+        {
+            try
+            {
+                object expected = new Mood_Analyze(null);
+                object actual = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalizer.MoodAnalizerClass", "MoodAnalizerClass"); ;
+                expected.Equals(actual);
+            }
+            catch (CustomMoodAnalysisException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }

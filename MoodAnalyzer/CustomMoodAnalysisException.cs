@@ -11,7 +11,9 @@ namespace MoodAnalyzer
         public enum MoodType
         {
             Empty_Message,
-            Null_Message
+            Null_Message,
+            NO_SUCH_METHOD,
+            NO_SUCH_CLASS,
         }
 
         public readonly MoodType type;
