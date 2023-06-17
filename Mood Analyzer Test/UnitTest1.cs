@@ -6,22 +6,50 @@ namespace Mood_Analyzer_Test
     [TestClass]
     public class UnitTest1
     {
-        // TC3.1 - Given Null Mood Should Return Happy
+        // TC4.1 - Given NULL Mood Should Throw CustomMoodAnalysisException indicating Null Mood
 
         [TestMethod]
         public void TestCase1()
         {
-            string MoodMSG = "";
+            try
+            {
+                string MoodMSG = string.Empty;
 
-            Mood_Analyze mood = new Mood_Analyze(MoodMSG);
+                Mood_Analyze mood = new Mood_Analyze(MoodMSG);
 
-            string actual = mood.AnalyzeMood();
+                string actual = mood.AnalyzeMood();
 
-            string expected = "Happy";
+            }
+            catch (CustomMoodAnalysisException e)
+            {
+                string expected = "Mood should not be Empty.";
 
-            Assert.AreEqual(expected, actual);
-            
+                Assert.AreEqual(expected, e.Message);
+            }
+
         }
 
+        // TC4.2 - Given Empty Mood Should Throw CustomMoodAnalysisException indicating Empty Mood
+
+        [TestMethod]
+        public void TestCase2()
+        {
+
+            try
+            {
+                string MoodMSG = null;
+
+                Mood_Analyze mood = new Mood_Analyze(MoodMSG);
+
+                string actual = mood.AnalyzeMood();
+
+            }
+            catch (CustomMoodAnalysisException e)
+            {
+                string expected = "Mood should not be Null.";
+
+                Assert.AreEqual(expected, e.Message);
+            }
+        }
     }
 }
