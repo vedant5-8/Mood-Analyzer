@@ -15,7 +15,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze(null);
-                object actual = MoodAnalyserFactory.CreateMoodAnalyser("Mood_Analyzer.Mood_Analyze", "Mood_Analyze"); ;
+                object actual = MoodAnalyserFactory.CreateMoodAnalyserDefaultConstructor("Mood_Analyzer.Mood_Analyze", "Mood_Analyze"); ;
                 expected.Equals(actual);
             }
             catch (CustomMoodAnalysisException ex)
@@ -32,7 +32,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze(null);
-                object actual = MoodAnalyserFactory.CreateMoodAnalyser("Mood_Analyser.Mood_Analyse", "Mood_Analyse"); ;
+                object actual = MoodAnalyserFactory.CreateMoodAnalyserDefaultConstructor("Mood_Analyser.Mood_Analyse", "Mood_Analyse"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {

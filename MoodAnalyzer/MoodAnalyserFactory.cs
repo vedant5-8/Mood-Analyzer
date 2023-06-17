@@ -6,7 +6,7 @@ namespace MoodAnalyzer
 {
     public class MoodAnalyserFactory
     {
-        public static object CreateMoodAnalyser(string NameSapceAndclassName, string constructorName)
+        public static object CreateMoodAnalyserDefaultConstructor(string NameSapceAndclassName, string constructorName)
         {
             string pattern = @"." + constructorName + "$";
             bool result = Regex.IsMatch(NameSapceAndclassName, pattern);
