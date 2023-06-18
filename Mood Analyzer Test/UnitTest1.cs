@@ -98,7 +98,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze("I am in any mood.");
-                object actual = MoodAnalyserFactory.ReflectionForParameterizedConstructor("MoodAnalyzer.Mood_Analyze", "Mood_Analyze1"); ;
+                object actual = MoodAnalyserFactory.ReflectionForParameterizedConstructor("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze1"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {
