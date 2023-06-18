@@ -7,18 +7,18 @@ namespace MoodAnalyzer
     {
         public static object ReflectionForDefaultConstructor(string NameSapceAndclassName, string constructorName)
         {
+            string pattern = @"." + constructorName + "$";
+            bool result = Regex.IsMatch(NameSapceAndclassName, pattern);
 
-            Type type = typeof(Mood_Analyze);
-
-            if (type.Name.Equals(NameSapceAndclassName) || type.FullName.Equals(NameSapceAndclassName))
+            if (result)
             {
-                if (type.Name.Equals(constructorName))
+                try
                 {
-                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
-                    object instance = ctor.Invoke(new object[] { null });
-                    return instance;
+                    Assembly assembly = Assembly.GetExecutingAssembly();
+                    Type moodAnalyserType = assembly.GetType(NameSapceAndclassName);
+                    return Activator.CreateInstance(moodAnalyserType);
                 }
-                else
+                catch (ArgumentNullException)
                 {
                     throw new CustomMoodAnalysisException(CustomMoodAnalysisException.MoodType.NO_SUCH_METHOD, "Constructor not found");
                 }
