@@ -16,7 +16,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze(null);
-                object actual = MoodAnalyserFactory.ReflectionForDefaultConstructor("MoodAnalyzer.Mood_Analyze", "Mood_Analyze"); ;
+                object actual = MoodAnalyserFactory.ApplyDRYPrincipleOnReflection("MoodAnalyzer.Mood_Analyze", "Mood_Analyze"); ;
                 expected.Equals(actual);
             }
             catch (CustomMoodAnalysisException ex)
@@ -33,7 +33,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze(null);
-                object actual = MoodAnalyserFactory.ReflectionForDefaultConstructor("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze"); ;
+                object actual = MoodAnalyserFactory.ApplyDRYPrincipleOnReflection("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {
@@ -49,7 +49,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze(null);
-                object actual = MoodAnalyserFactory.ReflectionForDefaultConstructor("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze1"); ;
+                object actual = MoodAnalyserFactory.ApplyDRYPrincipleOnReflection("MoodAnalyzer.Mood_Analyze", "Mood_Analyze1"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {
@@ -65,7 +65,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze("I am in sad mood");
-                object actual = MoodAnalyserFactory.ReflectionForParameterizedConstructor("MoodAnalyzer.Mood_Analyze", "Mood_Analyze"); ;
+                object actual = MoodAnalyserFactory.ApplyDRYPrincipleOnReflection("MoodAnalyzer.Mood_Analyze", "Mood_Analyze"); ;
                 expected.Equals(actual);
             }
             catch (CustomMoodAnalysisException ex)
@@ -82,7 +82,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze("I am in happy mood.");
-                object actual = MoodAnalyserFactory.ReflectionForParameterizedConstructor("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze"); ;
+                object actual = MoodAnalyserFactory.ApplyDRYPrincipleOnReflection("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {
@@ -98,7 +98,7 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze("I am in any mood.");
-                object actual = MoodAnalyserFactory.ReflectionForParameterizedConstructor("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze1"); ;
+                object actual = MoodAnalyserFactory.ApplyDRYPrincipleOnReflection("MoodAnalyzer.Mood_Analyze", "Mood_Analyze1"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {
