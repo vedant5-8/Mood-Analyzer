@@ -49,13 +49,12 @@ namespace Mood_Analyzer_Test
             try
             {
                 object expected = new Mood_Analyze(null);
-                object actual = MoodAnalyserFactory.ReflectionForDefaultConstructor("MoodAnalyzer.Mood_Analyze1", "Mood_Analyze1"); ;
+                object actual = MoodAnalyserFactory.ReflectionForDefaultConstructor("MoodAnalyzer.Mood_Analyze", "Mood_Analyze1"); ;
             }
             catch (CustomMoodAnalysisException ex)
             {
-                Assert.AreEqual("Constructor is not found", ex.Message);
+                Assert.AreEqual("Constructor not found", ex.Message);
             }
         }
-
     }
 }
