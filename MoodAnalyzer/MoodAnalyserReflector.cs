@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
-using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MoodAnalyzer
 {
-    public class MoodAnalyserFactory
+    public class MoodAnalyserReflector
     {
         public static object ApplyDRYPrincipleOnReflection(string NameSapceAndclassName, string constructorName)
         {
