@@ -9,6 +9,11 @@ namespace MoodAnalyzer
 
         public string Message;
 
+        public Mood_Analyze()
+        {
+            Message = null;
+        }
+
         public Mood_Analyze(string message)
         {
             Message = message;

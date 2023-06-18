@@ -1,13 +1,13 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace MoodAnalyzer
 {
     public class MoodAnalyserFactory
     {
-        public static object CreateMoodAnalyserDefaultConstructor(string NameSapceAndclassName, string constructorName)
+        public static object ReflectionForDefaultConstructor(string NameSapceAndclassName, string constructorName)
         {
+
             string pattern = @"." + constructorName + "$";
             bool result = Regex.IsMatch(NameSapceAndclassName, pattern);
 
@@ -21,16 +21,14 @@ namespace MoodAnalyzer
                 }
                 catch (ArgumentNullException)
                 {
-                    throw new CustomMoodAnalysisException(CustomMoodAnalysisException.MoodType.NO_SUCH_CLASS, "Class not found");
+                    throw new CustomMoodAnalysisException(CustomMoodAnalysisException.MoodType.NO_SUCH_METHOD, "Constructor is not found");
                 }
             }
             else
             {
-                throw new CustomMoodAnalysisException(CustomMoodAnalysisException.MoodType.NO_SUCH_METHOD, "Constructor is not found");
+                throw new CustomMoodAnalysisException(CustomMoodAnalysisException.MoodType.NO_SUCH_CLASS, "Class not found");
             }
+
         }
-
-
-
     }
 }
